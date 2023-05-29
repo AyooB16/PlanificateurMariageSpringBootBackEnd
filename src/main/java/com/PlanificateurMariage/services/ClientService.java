@@ -18,6 +18,25 @@ public class ClientService implements IClientService{
 	  {
 		  return clientRepository.findAll();
 	  }
+	  @Override
+	  public Client login(String email,String password)
+	  
+	  {
+		  Client c=clientRepository.findByEmail(email);
+		 
+		  if( c!=null) {
+			  if(c.getPassword().equals(password)) {
+				  return c;
+			  }
+			  else {
+				  return null;
+			  }
+		  }
+		  else {
+			  return null;
+		  }
+		   
+	  }
 	  
 	  @Override
 	  public Client findClient(int id)

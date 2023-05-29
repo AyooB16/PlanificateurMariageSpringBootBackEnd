@@ -11,4 +11,5 @@ public interface IClientService {
 	public boolean saveClient(Client client);
 	public boolean deleteClient(int id);
 	public Client updateClient(Client client,int id);
+	public Client login(String email,String password);
 }

@@ -33,6 +33,10 @@ public class ClientRestController {
 		return ClientService.findAllClient();
 		
 	}
+	@PostMapping("/login")
+	public Client postLogin(@RequestBody Client logOj) {
+		return ClientService.login(logOj.getEmail(),logOj.getPassword());
+	}
 	@PostMapping("/clients")
 	public boolean postClient(@RequestBody Client Client) {
 		return ClientService.saveClient(Client);
