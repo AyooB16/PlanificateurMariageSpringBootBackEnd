@@ -70,11 +70,11 @@ public class PlanificateurMariageApplication implements CommandLineRunner{
 		partenaireRepository.save(p2);
 		partenaireRepository.save(p3);
 		
-		Service s1 =new Service("Offre machta arousa w aris tp1","desc 1 1", 50, LocalTime.parse("00:01:00"));
-		Service s2 =new Service("Offre machta arousa w omha  w aris ","desc 2 ", 75, LocalTime.parse("00:01:30"));
-		Service s3 =new Service("Offre machta arousa kahaw ","desc 3 ", 25, LocalTime.parse("00:00:30"));
-		Service s4 =new Service("Offre machta arousa w aris tp2","desc 1 ", 40, LocalTime.parse("00:01:00"));
-		Service s5 =new Service("Waeda kbira","f 1 ", 10, LocalTime.parse("00:00:00"));
+		Service s1 =new Service("Offre machta arousa w aris tp1","desc 1 1", 50,"https://picsum.photos/300/200", LocalTime.parse("00:01:00"));
+		Service s2 =new Service("Offre machta arousa w omha  w aris ","desc 2 ", 75,"https://picsum.photos/300/200", LocalTime.parse("00:01:30"));
+		Service s3 =new Service("Offre machta arousa kahaw ","desc 3 ", 25,"https://picsum.photos/300/200", LocalTime.parse("00:00:30"));
+		Service s4 =new Service("Offre machta arousa w aris tp2","desc 1 ", 40,"https://picsum.photos/300/200", LocalTime.parse("00:01:00"));
+		Service s5 =new Service("Waeda kbira","f 1 ", 10,"https://picsum.photos/300/200", LocalTime.parse("00:00:00"));
 
 
 		s1.setPartenaire(p1);

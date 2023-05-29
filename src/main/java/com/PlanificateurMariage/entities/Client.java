@@ -19,7 +19,7 @@ public class Client extends User implements Serializable  {
 
 	@Temporal(TemporalType.DATE)
 	private LocalDate dateNaissance;
-
+	private String password;
 	@OneToMany(mappedBy = "client", fetch= FetchType.EAGER ,  cascade = CascadeType.REMOVE)
 	private List<Commande> commandes;
 
@@ -27,9 +27,10 @@ public class Client extends User implements Serializable  {
 		super();
 	}
 	
-	public Client(String nom,String prenom, LocalDate dateNaissance, String email, String tel, String rue, String ville, String region, String codePostal) {
+	public Client(String password,String nom,String prenom, LocalDate dateNaissance, String email, String tel, String rue, String ville, String region, String codePostal) {
 		super(nom, email, tel, rue, ville, region, codePostal);
 		this.prenom = prenom;
+		this.password=password;
 		this.dateNaissance = dateNaissance;
 	}
 
@@ -61,8 +62,16 @@ public class Client extends User implements Serializable  {
 
 	@Override
 	public String toString() {
-		return "Client [idUser=" + getIdUser() + ", nom=" + getNom() +", prenom=" + prenom + ", dateNaissance=" + dateNaissance+ ", email=" + getEmail() + ", tel=" + getTel() + ", rue=" + getRue()
+		return "Client [idUser=" + getIdUser() + ", nom=" + getNom() +", prenom=" + prenom + ", dateNaissance=" + dateNaissance+ ", email=" + getEmail() +", password="+password+ ", tel=" + getTel() + ", rue=" + getRue()
 				+ ", ville=" + getVille() + ", region=" + getRegion() + ", codePostal=" + getCodePostal() + "]";
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	

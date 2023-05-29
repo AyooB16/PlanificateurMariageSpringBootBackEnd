@@ -54,7 +54,7 @@ public class ServiceService implements IServiceService{
 	  @Override
 	  public com.PlanificateurMariage.entities.Service updateService(com.PlanificateurMariage.entities.Service e, int id)
 	  {
-		  e.setIdService(id);;
+		  e.setIdService(id);
 		  serviceRepository.save(e);
 		  return serviceRepository.findById(id).get();
 	  }

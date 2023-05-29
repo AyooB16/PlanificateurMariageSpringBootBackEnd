@@ -26,7 +26,7 @@ public class Service implements Serializable {
 	private double prix;
 	@Temporal(TemporalType.TIME)
 	private LocalTime duree;
-	
+	private String image;
 	@ManyToOne(fetch= FetchType.EAGER )
 	@JoinColumn(name = "idPartenaire")
 	private Partenaire partenaire;
@@ -38,12 +38,13 @@ public class Service implements Serializable {
 		
 	}
 
-	public Service(String libelle, String description, double prix, LocalTime duree) {
+	public Service(String libelle, String description, double prix,String image, LocalTime duree) {
 		super();
 		this.libelle = libelle;
 		this.description = description;
 		this.prix = prix;
 		this.duree = duree;
+		this.image =image;
 	}
 
 	public int getIdService() {
@@ -82,7 +83,8 @@ public class Service implements Serializable {
 	@Override
 	public String toString() {
 		return "Service [idService=" + idService + ", libelle=" + libelle + ", description=" + description + ", prix="
-				+ prix + ", duree=" + duree + "]";
+				+ prix + ", duree=" + duree + ", image="
+						+ image + "]";
 	}
 
 	//public Partenaire getPartenaire() {
@@ -99,6 +101,14 @@ public class Service implements Serializable {
 
 	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	
